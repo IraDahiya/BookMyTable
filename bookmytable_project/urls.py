@@ -15,9 +15,13 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include  # Import include
+from django.urls import path, include
+from django.shortcuts import redirect  # ✅ Needed for redirect
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('reservations/', include('reservations.urls')),  # Include your app's urls
+    path('reservations/', include('reservations.urls')),
+
+    # ✅ Redirect root ("/") to the 'home' named route inside reservations
+    path('', lambda request: redirect('home', permanent=True)),
 ]
