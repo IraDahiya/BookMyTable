@@ -1,0 +1,13 @@
+{% extends 'reservations/base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="alert alert-success text-center">
+        <h4 class="alert-heading">Reservation Successful!</h4>
+        <p>Thank you for booking with us. We'll see you soon.</p>
+        <hr>
+        <a href="{% url 'home' %}" class="btn btn-primary">Go to Home</a>
+        <a href="{% url 'view_reservations' %}" class="btn btn-outline-secondary">View Reservations</a>
+    </div>
+</div>
+{% endblock %}

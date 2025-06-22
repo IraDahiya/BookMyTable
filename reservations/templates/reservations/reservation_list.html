@@ -1,0 +1,18 @@
+{% extends 'reservations/base.html' %}
+
+{% block content %}
+<h2>All Reservations</h2>
+
+{% if reservations %}
+    <ul>
+    {% for res in reservations %}
+        <li>
+            <strong>{{ res.name }}</strong> - {{ res.date }} at {{ res.time }} (Guests: {{ res.guests }})
+        </li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No reservations found.</p>
+{% endif %}
+
+{% endblock %}

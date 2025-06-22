@@ -1,0 +1,9 @@
+<!-- reservations/templates/reservations/home.html -->
+{% extends 'reservations/base.html' %}
+{% block content %}
+<div class="text-center">
+    <h2 class="mb-4">Welcome to BookMyTable</h2>
+    <p class="lead">Reserve your favorite table now at your favorite restaurant.</p>
+    <a class="btn btn-primary btn-lg" href="{% url 'make_reservation' %}">Make a Reservation</a>
+</div>
+{% endblock %}

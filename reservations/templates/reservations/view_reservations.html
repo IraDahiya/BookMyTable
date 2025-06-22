@@ -1,0 +1,18 @@
+{% extends 'reservations/base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2 class="mb-3">All Reservations</h2>
+    <ul class="list-group">
+        {% for reservation in reservations %}
+            <li class="list-group-item">
+                <strong>{{ reservation.name }}</strong> -
+                {{ reservation.date|date:"F d, Y" }} at
+                {{ reservation.time|time:"g:i A" }} (Guests: {{ reservation.guests }})
+            </li>
+        {% empty %}
+            <li class="list-group-item">No reservations yet.</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
