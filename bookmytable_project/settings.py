@@ -25,7 +25,8 @@ SECRET_KEY = 'django-insecure--uiy+exut(-#e##u-u+)d012g2&+%q=^-9aiu3pj9990lq4h1e
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['bookmytable-1.onrender.com', 'localhost', '127.0.0.1']
+
 
 
 # Application definition
