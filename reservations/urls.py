@@ -1,10 +1,9 @@
-from django.urls import path
-from . import views
+from django.contrib import admin
+from django.urls import path, include
+from django.views.generic import RedirectView
 
 urlpatterns = [
-    path('', views.home, name='home'),
-    path('make/', views.make_reservation, name='make_reservation'),
-    path('view/', views.view_reservations, name='view_reservations'),
-    path('success/', views.reservation_success, name='reservation_success'),
-    path('all/', views.view_reservations, name='view_reservations'),
+    path('admin/', admin.site.urls),
+    path('reservations/', include('reservations.urls')),
+    path('', RedirectView.as_view(url='/reservations/', permanent=True)),  # Redirect root '/' to '/reservations/'
 ]
